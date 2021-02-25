@@ -1,0 +1,16 @@
+/*
+app variables
+*/
+
+:root {
+    --main-font: 'Orbitron', sans-serif;
+}
+
+/*
+app CSS reset
+*/
+
+body, div, p {
+    margin: 0;
+    padding: 0;
+}
