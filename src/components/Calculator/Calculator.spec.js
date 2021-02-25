@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Calculator from './Calculator';
+import Display from '../Display/Display';
 import '../setupTests'
 
 describe('Calculator', () => {
@@ -10,5 +11,9 @@ describe('Calculator', () => {
 
     it('should render a <div />', () => {
         expect(wrapper.find('div').length).toEqual(1);
+    });
+
+    it('should render the Display Component', () => {
+        expect(wrapper.containsMatchingElement(<Display />)).toEqual(true)
     });
 });
