@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Key from '../Key/Key';
+import '../Key/Key.css';
 import './Keypad.css';
 
 const Keypad = ({ 
@@ -40,11 +41,10 @@ const Keypad = ({
                 <Key 
                     keyAction={callOperator}
                     keyType="submit-key"
-                    keyValue=""
+                    keyValue="="
                 />
             </div>
         </div>
-
     );
 }
 
