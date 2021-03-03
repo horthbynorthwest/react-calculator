@@ -17,12 +17,17 @@ describe('Keypad', () => {
             />);
     });
 
-    it('Should render 2 divs', () => {
-        expect(wrapper.find('div').length).toEqual(2);
+    it('Should render at least one div', () => {
+        expect(wrapper.find('div').length).toBeGreaterThanOrEqual(1);
     });
 
     it('renders the values of numbers', () => {
         wrapper.setProps({numbers: ['0', '1', '2']});
         expect(wrapper.find('.numbers-container').text()).toEqual('012');
+    });
+
+    it('renders the values of operators', () => {
+        wrapper.setProps({operators: ['+', '-', '*', '/']});
+        expect(wrapper.find('.operators-container').text()).toEqual('+-*/');
     });
 });
