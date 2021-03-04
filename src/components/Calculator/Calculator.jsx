@@ -21,12 +21,17 @@ class Calculator extends Component {
     
       updateDisplay = value => {
         let { displayValue } = this.state;
-        if (displayValue === '0') {
-            // if the displayValue is 0 we simply replace the value here
-            displayValue = value;
+
+        if (value === 'ce') {
+            // removes the last character in displayValue
+            displayValue = displayValue.substr(0, displayValue.length -1);
+            // if removing the last character results in empty string
+            // set display value to '0'
+            if(displayValue === '') displayValue = '0';
         } else {
-            // as it's a string adding the values together concatenates them
-            displayValue += value;
+            displayValue === '0' ? displayValue = value : displayValue += value;
+            // if the displayValue is 0 we simply replace the value here
+            // as it's a string adding the values together concatenates them 
         }
         this.setState({ displayValue });
       }
