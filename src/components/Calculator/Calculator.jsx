@@ -23,6 +23,9 @@ class Calculator extends Component {
             // set the storedValue to the displayValue
             storedValue = displayValue;
 
+            // reset the value of displayValue for the 2nd number to be operated upon
+            displayValue = '0';
+
             // update the value of selectedOperator
             selectedOperator = value;
         } else {
