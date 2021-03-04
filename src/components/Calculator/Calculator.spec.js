@@ -124,3 +124,14 @@ describe('updateDisplay', () => {
         expect(wrapper.state('displayValue')).toEqual('.');
     });
 });
+
+describe('setOperator', () => {
+    let wrapper;
+
+    beforeEach(() => wrapper = shallow(<Calculator />));
+
+    it('updates the value of selectedOperator', () => {
+        wrapper.instance().setOperator('+');
+        expect(wrapper.state('selectedOperator')).toEqual('+');
+    });
+});
