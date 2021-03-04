@@ -134,4 +134,16 @@ describe('setOperator', () => {
         wrapper.instance().setOperator('+');
         expect(wrapper.state('selectedOperator')).toEqual('+');
     });
+    it('updates the value of selectedOperator if a different operator is clicked', () => {
+        wrapper.instance().setOperator('+');
+        expect(wrapper.state('selectedOperator')).toEqual('+');
+        wrapper.instance().setOperator('/');
+        expect(wrapper.state('selectedOperator')).toEqual('/');
+    });
+
+    it('updates the value of storedValue to the value of displayValue', () => {
+        wrapper.setState({ displayValue: '5' });
+        wrapper.instance().setOperator('+');
+        expect(wrapper.state('storedValue')).toEqual('5');
+    })
 });

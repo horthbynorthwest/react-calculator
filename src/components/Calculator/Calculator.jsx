@@ -17,8 +17,20 @@ class Calculator extends Component {
     
       setOperator = value => {
         let { displayValue, selectedOperator, storedValue } = this.state;
-        
-        selectedOperator = value;
+
+        // check if a value is already present for selectedOperator
+        if(selectedOperator === '') {
+            // set the storedValue to the displayValue
+            storedValue = displayValue;
+
+            // update the value of selectedOperator
+            selectedOperator = value;
+        } else {
+            // if selectedOperator is not an empty string
+            // update the value to the given value
+            selectedOperator = value;
+        }
+
 
         this.setState({ displayValue, selectedOperator, storedValue });
       }
