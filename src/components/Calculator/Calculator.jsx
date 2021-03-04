@@ -19,8 +19,12 @@ class Calculator extends Component {
         console.log('set operation');
       }
     
-      updateDisplay = () => {
-        console.log('update display');
+      updateDisplay = value => {
+        let { displayValue } = this.state;
+        if (displayValue === '0') {
+            displayValue = value
+        }
+        this.setState({ displayValue });
       }
 
     render = () => {
