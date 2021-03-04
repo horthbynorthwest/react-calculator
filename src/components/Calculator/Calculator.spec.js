@@ -145,5 +145,11 @@ describe('setOperator', () => {
         wrapper.setState({ displayValue: '5' });
         wrapper.instance().setOperator('+');
         expect(wrapper.state('storedValue')).toEqual('5');
-    })
+    });
+
+    it('updates the value of displayValue to "0" after pressing an operator for the 2nd number', () => {
+        wrapper.setState({ displayValue: '5' });
+        wrapper.instance().setOperator('+');
+        expect(wrapper.state('displayValue')).toEqual('0');
+    });
 });
