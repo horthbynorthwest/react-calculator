@@ -18,7 +18,15 @@ class Calculator extends Component {
         displayValue = parseInt(displayValue, 10);
         storedValue = parseInt(storedValue, 10);
 
-        displayValue = storedValue + displayValue;
+        switch(selectedOperator) {
+            case '+':
+                displayValue = storedValue + displayValue;
+                break;
+            case '-':
+                displayValue = storedValue - displayValue;
+                break;
+        }
+        
 
         displayValue = displayValue.toString();
 
