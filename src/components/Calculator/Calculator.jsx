@@ -22,6 +22,9 @@ class Calculator extends Component {
       updateDisplay = value => {
         let { displayValue } = this.state;
 
+        // if '.' has already been clicked then we wipe the string
+        if (value === '.' && displayValue.includes('.')) value = '';
+
         if (value === 'ce') {
             // removes the last character in displayValue
             displayValue = displayValue.substr(0, displayValue.length -1);
