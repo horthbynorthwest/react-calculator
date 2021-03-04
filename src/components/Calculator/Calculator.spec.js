@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount, render, shallow } from 'enzyme';
 import Calculator from './Calculator';
 import Display from '../Display/Display';
 import Keypad from '../Keypad/Keypad'
@@ -70,5 +70,20 @@ describe('Mounted Calculator', () => {
         wrapper.find('.submit-key').first().simulate('click');
         // now has been called as it's an on click method
         expect(spy).toHaveBeenCalledTimes(1);
+    });
+});
+
+describe('updateDisplay', () => {
+    let wrapper;
+
+    beforeEach(() => wrapper = shallow(<Calculator />));
+
+    it('updates displayValue to 5', () => {
+        // Here we're saying that updateDisplay takes a string argument
+        // we're using wrapper.instance of the Calculator component as updating the display 
+        // will cause the Display component to re-render & update the state
+        // We are then testing the Calculator state to make sure it's been updated correctly
+        wrapper.instance().updateDisplay('5');
+        expect(wrapper.state('displayValue')).toEqual('5')
     });
 });
