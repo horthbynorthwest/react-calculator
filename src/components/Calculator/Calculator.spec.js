@@ -152,4 +152,12 @@ describe('setOperator', () => {
         wrapper.instance().setOperator('+');
         expect(wrapper.state('displayValue')).toEqual('0');
     });
+
+    it('updating selectedOperator does not update storedValue', () => {
+        wrapper.setState({ displayValue: '5' });
+        wrapper.instance().setOperator('+');
+        expect(wrapper.state('storedValue')).toEqual('5');
+        wrapper.instance().setOperator('-');
+        expect(wrapper.state('storedValue')).toEqual('5');
+    });
 });
