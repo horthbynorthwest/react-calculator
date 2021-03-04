@@ -36,9 +36,13 @@ class Calculator extends Component {
                 displayValue = '0';
         }
         
-
+        // converts displayValue to a string
         displayValue = displayValue.toString();
 
+        // reset selectedOperator so will work for multiple calculations
+        selectedOperator = '';
+
+        // checking for edgecases of NaN or Infinity if true, set displayvalue to zero.
         if(displayValue === 'NaN' || displayValue === 'Infinity') displayValue = '0';
 
         this.setState({ displayValue, selectedOperator, storedValue });
