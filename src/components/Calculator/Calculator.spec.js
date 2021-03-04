@@ -161,3 +161,17 @@ describe('setOperator', () => {
         expect(wrapper.state('storedValue')).toEqual('5');
     });
 });
+
+describe('callOperator', () => {
+    let wrapper;
+
+    beforeEach(() => wrapper = shallow(<Calculator />));
+
+    it('updates displayValue to the sum of the storedValue and displayValue', () => {
+        wrapper.setState({ storedValue: '3' });
+        wrapper.setState({ displayValue: '2' });
+        wrapper.setState({ selectedOperator: '+' });
+        wrapper.instance().callOperator();
+        expect(wrapper.state('displayValue')).toEqual('5');
+    });
+});
