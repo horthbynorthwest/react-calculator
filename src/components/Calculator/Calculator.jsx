@@ -25,6 +25,12 @@ class Calculator extends Component {
             case '-':
                 displayValue = storedValue - displayValue;
                 break;
+            case 'x':
+                displayValue = storedValue * displayValue;
+                break;
+            case '/':
+                displayValue = storedValue / displayValue;
+                break;
         }
         
 
