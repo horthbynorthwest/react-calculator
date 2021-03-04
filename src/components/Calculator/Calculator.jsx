@@ -39,7 +39,7 @@ class Calculator extends Component {
 
         displayValue = displayValue.toString();
 
-        if(displayValue === 'NaN') displayValue = '0';
+        if(displayValue === 'NaN' || displayValue === 'Infinity') displayValue = '0';
 
         this.setState({ displayValue, selectedOperator, storedValue });
       }
