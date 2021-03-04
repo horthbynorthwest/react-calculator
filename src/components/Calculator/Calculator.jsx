@@ -22,7 +22,11 @@ class Calculator extends Component {
       updateDisplay = value => {
         let { displayValue } = this.state;
         if (displayValue === '0') {
-            displayValue = value
+            // if the displayValue is 0 we simply replace the value here
+            displayValue = value;
+        } else {
+            // as it's a string adding the values together concatenates them
+            displayValue += value;
         }
         this.setState({ displayValue });
       }
