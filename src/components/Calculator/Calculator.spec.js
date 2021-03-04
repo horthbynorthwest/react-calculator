@@ -112,4 +112,15 @@ describe('updateDisplay', () => {
         wrapper.instance().updateDisplay('ce');
         expect(wrapper.state('displayValue')).toEqual('5');
     });
+
+    it('will set displayValue to "0" if displayValue is equal to an empty string', () => {
+        wrapper.instance().updateDisplay('ce');
+        expect(wrapper.state('displayValue')).toEqual('0');
+    });
+
+    it('prevents multiple instances of "." in displayValue', () => {
+        wrapper.instance().updateDisplay('.');
+        wrapper.instance().updateDisplay('.');
+        expect(wrapper.state('displayValue')).toEqual('.');
+    });
 });
