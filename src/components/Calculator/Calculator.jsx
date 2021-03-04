@@ -31,10 +31,15 @@ class Calculator extends Component {
             case '/':
                 displayValue = storedValue / displayValue;
                 break;
+            default:
+                // set display to 0 if no case matches
+                displayValue = '0';
         }
         
 
         displayValue = displayValue.toString();
+
+        if(displayValue === 'NaN') displayValue = '0';
 
         this.setState({ displayValue, selectedOperator, storedValue });
       }

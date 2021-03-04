@@ -198,4 +198,12 @@ describe('callOperator', () => {
         wrapper.instance().callOperator();
         expect(wrapper.state('displayValue')).toEqual('1.5');
     });
+
+    it('updates displayValue to "0" if operation results in "NaN"', () => {
+        wrapper.setState({ storedValue: '3' });
+        wrapper.setState({ displayValue: 'string' });
+        wrapper.setState({ selectedOperator: '/' });
+        wrapper.instance().callOperator();
+        expect(wrapper.state('displayValue')).toEqual('0');
+    });
 });
